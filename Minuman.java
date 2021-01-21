@@ -14,7 +14,7 @@ public class Minuman {
     /**
      * @param args the command line arguments
      */
-    
+double total, bayar;    
 public static void main(String[] args) {
 	int scan ;
         int i = 0; //indikator
@@ -46,6 +46,14 @@ switch (scan ){
 	break;
 }
 }
+double hitungKembalian (double pay){
+    double bayar = pay;
+    double kembalian = bayar - total;
+    
+            
+    return kembalian;
+}
+
 static void Showmenu (){
 
  System.out.println("1. juice  harga 10000 ");
@@ -70,34 +78,21 @@ Integer [] harga = {10000,7000,13000,5000};
  System.out.println("3. "+menu [2]+"  harga  "+harga [2]);
  System.out.println("4. "+menu [3]+"  harga  "+harga [3]);
 System.out.println("masukkan barang yang ingin dibeli ");
-int pilihan, jmlh1,jmlh2,jmlh3,jmlh4;
-int total1, total2, total3, total4;
+int pilihan;
 pilihan=belanja.nextInt();
 
     switch (pilihan) {
         case 1:
-            System.out.println ("masukkan jumlah");
-            jmlh1=belanja.nextInt();
-            total1= jmlh1* harga[0];
-            System.out.println("jumlah bayar "+total1);
+            juice();
             break;
         case 2:
-            System.out.println ("masukkan jumlah");
-            jmlh2=belanja.nextInt();
-            total2= jmlh2* harga[1];
-            System.out.println("jumlah bayar "+total2);
+            coffee();
             break;
         case 3:
-            System.out.println ("masukkan jumlah");
-            jmlh3=belanja.nextInt();
-            total3= jmlh3* harga[2];
-            System.out.println("jumlah bayar "+total3);
+            soda();
             break;
         case 4:
-            System.out.println ("masukkan jumlah");
-            jmlh4=belanja.nextInt();
-            total4= jmlh4* harga[3];
-            System.out.println("jumlah bayar "+total4);
+            mineral();
             break;
         default:
             break;
@@ -106,5 +101,35 @@ pilihan=belanja.nextInt();
 
 
 }
-}    
+static void juice () {
+    System.out.println ("masukkan jumlah");
+    Scanner belanja = new Scanner (System.in);
+    int jmlh=belanja.nextInt();
+    int total= jmlh* 10000 ;
+    System.out.println("jumlah bayar "+total);
+}
+static void coffee(){
+    System.out.println ("masukkan jumlah");
+    Scanner belanja = new Scanner (System.in);
+    int jmlh=belanja.nextInt();
+    int total= jmlh* 7000;
+    System.out.println("jumlah bayar "+total);
+}
+static void soda (){
+   System.out.println ("masukkan jumlah");
+   Scanner belanja = new Scanner (System.in);
+   int jmlh=belanja.nextInt();
+   int total= jmlh* 13000;
+   System.out.println("jumlah bayar "+total);
+}
+static void mineral (){
+   System.out.println ("masukkan jumlah");
+   Scanner belanja = new Scanner (System.in);
+   int jmlh4=belanja.nextInt();
+   int total4= jmlh4* 5000;
+   System.out.println("jumlah bayar "+total4);
+}
+    
+}
+    
 
